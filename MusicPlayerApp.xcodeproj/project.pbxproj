@@ -21,6 +21,7 @@
 		217BB51226E903AB0045CB50 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB51126E903AB0045CB50 /* Result.swift */; };
 		217BB51526EA102A0045CB50 /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB51326EA102A0045CB50 /* MusicTableViewCell.swift */; };
 		217BB51626EA102A0045CB50 /* MusicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217BB51426EA102A0045CB50 /* MusicTableViewCell.xib */; };
+		217BB51A26EA28D10045CB50 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 217BB51926EA28D10045CB50 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217BB51A26EA28D10045CB50 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +160,9 @@
 			dependencies = (
 			);
 			name = MusicPlayerApp;
+			packageProductDependencies = (
+				217BB51926EA28D10045CB50 /* Kingfisher */,
+			);
 			productName = MusicPlayerApp;
 			productReference = 217BB4DA26E8EFE60045CB50 /* MusicPlayerApp.app */;
 			productType = "com.apple.product-type.application";
@@ -230,6 +235,9 @@
 				Base,
 			);
 			mainGroup = 217BB4D126E8EFE60045CB50;
+			packageReferences = (
+				217BB51826EA28D10045CB50 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 217BB4DB26E8EFE60045CB50 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -638,6 +646,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		217BB51826EA28D10045CB50 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		217BB51926EA28D10045CB50 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 217BB51826EA28D10045CB50 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 217BB4D226E8EFE60045CB50 /* Project object */;
 }

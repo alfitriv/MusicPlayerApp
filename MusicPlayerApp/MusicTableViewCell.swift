@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MusicTableViewCell: UITableViewCell {
     @IBOutlet weak var artistNameLabel: UILabel!
@@ -29,6 +30,9 @@ class MusicTableViewCell: UITableViewCell {
         artistNameLabel.text = music.artistName
         songNameLabel.text = music.trackName
         albumNameLabel.text = music.collectionName
+        
+        let url = URL(string: music.artworkUrl60 ?? "")
+        imageView?.kf.setImage(with: url)
     }
     
 }
