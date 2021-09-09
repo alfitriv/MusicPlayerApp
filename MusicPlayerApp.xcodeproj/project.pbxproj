@@ -19,6 +19,8 @@
 		217BB50E26E8F2090045CB50 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB50D26E8F2090045CB50 /* Music.swift */; };
 		217BB51026E8F9150045CB50 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB50F26E8F9150045CB50 /* NetworkLayer.swift */; };
 		217BB51226E903AB0045CB50 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB51126E903AB0045CB50 /* Result.swift */; };
+		217BB51526EA102A0045CB50 /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB51326EA102A0045CB50 /* MusicTableViewCell.swift */; };
+		217BB51626EA102A0045CB50 /* MusicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217BB51426EA102A0045CB50 /* MusicTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		217BB50D26E8F2090045CB50 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		217BB50F26E8F9150045CB50 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		217BB51126E903AB0045CB50 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		217BB51326EA102A0045CB50 /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
+		217BB51426EA102A0045CB50 /* MusicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				217BB50D26E8F2090045CB50 /* Music.swift */,
 				217BB50F26E8F9150045CB50 /* NetworkLayer.swift */,
 				217BB51126E903AB0045CB50 /* Result.swift */,
+				217BB51326EA102A0045CB50 /* MusicTableViewCell.swift */,
+				217BB51426EA102A0045CB50 /* MusicTableViewCell.xib */,
 			);
 			path = MusicPlayerApp;
 			sourceTree = "<group>";
@@ -243,6 +249,7 @@
 				217BB4EA26E8EFEE0045CB50 /* LaunchScreen.storyboard in Resources */,
 				217BB4E726E8EFEE0045CB50 /* Assets.xcassets in Resources */,
 				217BB4E526E8EFE60045CB50 /* Main.storyboard in Resources */,
+				217BB51626EA102A0045CB50 /* MusicTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +278,7 @@
 				217BB4E226E8EFE60045CB50 /* ViewController.swift in Sources */,
 				217BB4DE26E8EFE60045CB50 /* AppDelegate.swift in Sources */,
 				217BB50E26E8F2090045CB50 /* Music.swift in Sources */,
+				217BB51526EA102A0045CB50 /* MusicTableViewCell.swift in Sources */,
 				217BB51026E8F9150045CB50 /* NetworkLayer.swift in Sources */,
 				217BB4E026E8EFE60045CB50 /* SceneDelegate.swift in Sources */,
 			);
