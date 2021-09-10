@@ -22,6 +22,8 @@
 		217BB51526EA102A0045CB50 /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB51326EA102A0045CB50 /* MusicTableViewCell.swift */; };
 		217BB51626EA102A0045CB50 /* MusicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217BB51426EA102A0045CB50 /* MusicTableViewCell.xib */; };
 		217BB51A26EA28D10045CB50 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 217BB51926EA28D10045CB50 /* Kingfisher */; };
+		217BB51D26EA36800045CB50 /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB51B26EA36800045CB50 /* AudioPlayerViewController.swift */; };
+		217BB51E26EA36810045CB50 /* AudioPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217BB51C26EA36800045CB50 /* AudioPlayerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		217BB51126E903AB0045CB50 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		217BB51326EA102A0045CB50 /* MusicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
 		217BB51426EA102A0045CB50 /* MusicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicTableViewCell.xib; sourceTree = "<group>"; };
+		217BB51B26EA36800045CB50 /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewController.swift; sourceTree = "<group>"; };
+		217BB51C26EA36800045CB50 /* AudioPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioPlayerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 				217BB51126E903AB0045CB50 /* Result.swift */,
 				217BB51326EA102A0045CB50 /* MusicTableViewCell.swift */,
 				217BB51426EA102A0045CB50 /* MusicTableViewCell.xib */,
+				217BB51B26EA36800045CB50 /* AudioPlayerViewController.swift */,
+				217BB51C26EA36800045CB50 /* AudioPlayerViewController.xib */,
 			);
 			path = MusicPlayerApp;
 			sourceTree = "<group>";
@@ -257,6 +263,7 @@
 				217BB4EA26E8EFEE0045CB50 /* LaunchScreen.storyboard in Resources */,
 				217BB4E726E8EFEE0045CB50 /* Assets.xcassets in Resources */,
 				217BB4E526E8EFE60045CB50 /* Main.storyboard in Resources */,
+				217BB51E26EA36810045CB50 /* AudioPlayerViewController.xib in Resources */,
 				217BB51626EA102A0045CB50 /* MusicTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217BB51D26EA36800045CB50 /* AudioPlayerViewController.swift in Sources */,
 				217BB51226E903AB0045CB50 /* Result.swift in Sources */,
 				217BB4E226E8EFE60045CB50 /* ViewController.swift in Sources */,
 				217BB4DE26E8EFE60045CB50 /* AppDelegate.swift in Sources */,
@@ -395,7 +403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -450,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -467,6 +475,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D6ZFFGJQCK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusicPlayerApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -494,6 +503,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D6ZFFGJQCK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MusicPlayerApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

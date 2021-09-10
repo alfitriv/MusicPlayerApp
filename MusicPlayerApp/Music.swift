@@ -13,6 +13,7 @@ struct Music: Decodable {
     var previewUrl: String?
     var collectionName: String?
     var artworkUrl60: String?
+    var trackViewUrl: String?
     
     private enum CodingKeys: String, CodingKey {
         case artistName
@@ -20,5 +21,6 @@ struct Music: Decodable {
         case previewUrl
         case collectionName
         case artworkUrl60
+        case trackViewUrl
     }
 }

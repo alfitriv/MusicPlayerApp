@@ -6,10 +6,18 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     var networkLayer = NetworkLayer.shared
     var musicList: [Music] = []
+    var filteredMusic: [Music] = []
+    var audioPlayer: AVAudioPlayer?
+    var avPlayer: AVPlayer?
+    let searchController = UISearchController(searchResultsController: nil)
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -21,8 +29,23 @@ class ViewController: UIViewController {
             print(error)
         }
         
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Music"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
         tableView.register(UINib(nibName: "MusicTableViewCell", bundle: nil), forCellReuseIdentifier: "musicCell")
     }
+    
+//    func filterContentForSearchText(_ searchText: String,
+//                                    category: Candy.Category? = nil) {
+//      filteredCandies = candies.filter { (candy: Candy) -> Bool in
+//        return candy.name.lowercased().contains(searchText.lowercased())
+//      }
+//
+//      tableView.reloadData()
+//    }
     
 }
 
@@ -40,5 +63,28 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let audioPlayerVC = AudioPlayerViewController()
+        let music = musicList[indexPath.row]
+    
+        do {
+            let musicURL = URL(string: music.previewUrl!)
+            let playerItem: AVPlayerItem = AVPlayerItem(url: musicURL!)
+            avPlayer = AVPlayer(playerItem: playerItem)
+            avPlayer?.playImmediately(atRate: 1.0)
+            audioPlayerVC.avPlayer = avPlayer
+            } catch {
+                
+            }
+        
+        self.present(audioPlayerVC, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        print("hello")
     }
 }
