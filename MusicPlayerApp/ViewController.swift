@@ -22,12 +22,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkLayer.fetchMusicResults(successHandler: { [weak self] (music) in
-            self?.musicList = music.results
-            self?.tableView.reloadData()
-        }) { (error) in
-            print(error)
-        }
+//        networkLayer.fetchMusicResults(successHandler: { [weak self] (music) in
+//            self?.musicList = music.results
+//            self?.tableView.reloadData()
+//        }) { (error) in
+//            print(error)
+//        }
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -85,6 +85,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        print("hello")
+        if searchController.searchBar.text?.count ?? 0 > 3 {
+            networkLayer.fetchMusicResults(searchText: searchController.searchBar.text ?? "", successHandler: { [weak self] (music) in
+                self?.musicList = music.results
+                self?.tableView.reloadData()
+            }) { (error) in
+                print(error)
+            }
+        }
     }
 }

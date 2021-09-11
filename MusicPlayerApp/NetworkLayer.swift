@@ -11,9 +11,9 @@ class NetworkLayer {
     static var shared = NetworkLayer()
     private init(){}
     
-    func fetchMusicResults(successHandler: @escaping (Result) -> Void, errorHandler: @escaping (Error) -> Void) {
+    func fetchMusicResults(searchText: String, successHandler: @escaping (Result) -> Void, errorHandler: @escaping (Error) -> Void) {
         let session = URLSession.shared
-        let urlRequest = URLRequest(url: URL(string: "https://itunes.apple.com/search?term=jack+johnson&media=music")!)
+        let urlRequest = URLRequest(url: URL(string: "https://itunes.apple.com/search?term=\(searchText)&media=music")!)
         
         session.dataTask(with: urlRequest) { (data, response, error) in
                     guard error == nil else {
