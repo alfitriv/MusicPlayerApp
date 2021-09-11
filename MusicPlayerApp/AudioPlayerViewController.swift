@@ -10,14 +10,17 @@ import AVFAudio
 import AVFoundation
 
 class AudioPlayerViewController: UIViewController {
-    @IBOutlet weak var artistLabel: UILabel!
-    @IBOutlet weak var songLabel: UILabel!
-    @IBOutlet weak var progressView: UIProgressView!
-    var audioPlayer: AVAudioPlayer?
+    @IBOutlet weak var songTitleLabel: UILabel!
+    @IBOutlet weak var artistTitleLabel: UILabel!
+    @IBOutlet weak var playPauseButton: UIButton!
     var avPlayer: AVPlayer?
+    var isPaused: Bool = false
+    var music: Music?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playPauseButton.setTitle("Pause", for: .normal)
+        setupView(music: music ?? Music(artistName: nil, trackName: nil, previewUrl: nil, collectionName: nil, artworkUrl60: nil, trackViewUrl: nil))
 
         if #available(iOS 15.0, *) {
             if let presentationController = presentationController as? UISheetPresentationController {
@@ -29,39 +32,26 @@ class AudioPlayerViewController: UIViewController {
             // Fallback on earlier versions
         }
         
-        playerProgress()
     }
     
     func setupView(music: Music) {
-        artistLabel.text = music.artistName
-        songLabel.text = music.trackName
+        artistTitleLabel.text = music.artistName
+        songTitleLabel.text = music.trackName
     }
     
-    func playerProgress() {
-        var progress = Float(0)
-        if let audioPlayer = audioPlayer {
-            progress = ((audioPlayer.duration > 0)
-                ? Float(audioPlayer.currentTime/audioPlayer.duration)
-                : 0)
+    func togglePlayAndPause() {
+        if isPaused == true {
+            avPlayer?.pause()
+            playPauseButton.setTitle("Play", for: .normal)
+        } else {
+            avPlayer?.play()
+            playPauseButton.setTitle("Pause", for: .normal)
         }
-        progressView.setProgress(progress, animated: true)
     }
     
     @IBAction func pauseButton(_ sender: Any) {
-        avPlayer?.pause()
+        isPaused = !isPaused
+        togglePlayAndPause()
     }
-    
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

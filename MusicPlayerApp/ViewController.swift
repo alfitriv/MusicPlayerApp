@@ -68,6 +68,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let audioPlayerVC = AudioPlayerViewController()
         let music = musicList[indexPath.row]
+        audioPlayerVC.music = music
     
         do {
             let musicURL = URL(string: music.previewUrl!)
@@ -78,7 +79,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             } catch {
                 
             }
-        
         self.present(audioPlayerVC, animated: true, completion: nil)
     }
 }
