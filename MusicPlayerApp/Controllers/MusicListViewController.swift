@@ -12,6 +12,7 @@ class MusicListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var musicList: [Music] = []
     var avPlayer: AVPlayer?
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     private let musicService: MusicService
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -33,6 +34,7 @@ class MusicListViewController: UIViewController {
         definesPresentationContext = true
 
         tableView.register(UINib(nibName: "MusicTableViewCell", bundle: nil), forCellReuseIdentifier: "musicCell")
+        loadingIndicator.isHidden = true
     }
 
 }
@@ -74,7 +76,11 @@ extension MusicListViewController: UITableViewDelegate, UITableViewDataSource {
 extension MusicListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text?.count ?? 0 > 3 {
+            loadingIndicator.isHidden = false
+            loadingIndicator.startAnimating()
             musicService.fetchMusicResults(searchText: searchController.searchBar.text ?? "", successHandler: { [weak self] (music) in
+                self?.loadingIndicator.isHidden = true
+                self?.loadingIndicator.stopAnimating()
                 self?.musicList = music.results
                 self?.tableView.reloadData()
             }) { (error) in

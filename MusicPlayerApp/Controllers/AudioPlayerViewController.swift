@@ -27,6 +27,7 @@ class AudioPlayerViewController: UIViewController {
                 presentationController.detents = [
                     .medium()
                 ]
+                
             }
         } else {
             // Fallback on earlier versions
@@ -50,6 +51,13 @@ class AudioPlayerViewController: UIViewController {
     }
     
     @IBAction func pauseButton(_ sender: Any) {
+        if #available(iOS 15.0, *) {
+            if let presentationController = presentationController as? UISheetPresentationController {
+                presentationController.selectedDetentIdentifier = .medium
+            }
+        } else {
+            // Fallback on earlier versions
+        }
         isPaused = !isPaused
         togglePlayAndPause()
     }
