@@ -13,6 +13,7 @@ class MusicListViewController: UIViewController {
     var musicList: [Music] = []
     var avPlayer: AVPlayer?
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var emptyView: UIView!
     private let musicService: MusicService
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -77,6 +78,7 @@ extension MusicListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text?.count ?? 0 > 3 {
             loadingIndicator.isHidden = false
+            emptyView.isHidden = true
             loadingIndicator.startAnimating()
             musicService.fetchMusicResults(searchText: searchController.searchBar.text ?? "", successHandler: { [weak self] (music) in
                 self?.loadingIndicator.isHidden = true

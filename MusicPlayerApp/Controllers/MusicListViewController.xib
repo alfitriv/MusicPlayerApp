@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MusicListViewController" customModule="MusicPlayerApp" customModuleProvider="target">
             <connections>
+                <outlet property="emptyView" destination="jQX-V7-NTP" id="Mvq-1S-VtO"/>
                 <outlet property="loadingIndicator" destination="RFR-cx-fFz" id="sLk-co-687"/>
                 <outlet property="tableView" destination="ke4-4l-10m" id="LqH-lL-Cnz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -32,6 +33,22 @@
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="RFR-cx-fFz">
                     <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                 </activityIndicatorView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jQX-V7-NTP">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Music Searched Yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aU8-6o-nAY">
+                            <rect key="frame" x="119.5" y="398.5" width="175" height="21"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="aU8-6o-nAY" firstAttribute="centerX" secondItem="jQX-V7-NTP" secondAttribute="centerX" id="1IA-WW-f9c"/>
+                        <constraint firstItem="aU8-6o-nAY" firstAttribute="centerY" secondItem="jQX-V7-NTP" secondAttribute="centerY" id="PWs-R8-laa"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -39,9 +56,13 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ke4-4l-10m" secondAttribute="trailing" id="3Am-pJ-OS7"/>
                 <constraint firstItem="RFR-cx-fFz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="3jm-XB-mZ4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ke4-4l-10m" secondAttribute="bottom" id="4bp-v5-qJO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jQX-V7-NTP" secondAttribute="trailing" id="7cb-iT-Fj4"/>
+                <constraint firstItem="jQX-V7-NTP" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="MOH-RT-384"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jQX-V7-NTP" secondAttribute="bottom" id="Rvl-hW-Zq7"/>
                 <constraint firstItem="RFR-cx-fFz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WVS-Ok-lP4"/>
                 <constraint firstItem="ke4-4l-10m" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pIb-PA-ndM"/>
                 <constraint firstItem="ke4-4l-10m" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qnh-Pl-fv3"/>
+                <constraint firstItem="jQX-V7-NTP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xEa-Q6-eSj"/>
             </constraints>
             <point key="canvasLocation" x="139" y="81"/>
         </view>
