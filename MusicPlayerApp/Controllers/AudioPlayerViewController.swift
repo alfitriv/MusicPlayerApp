@@ -19,7 +19,7 @@ class AudioPlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playPauseButton.setTitle("Pause", for: .normal)
+        setupPauseButton()
         setupView(music: music ?? Music(artistName: nil, trackName: nil, previewUrl: nil, collectionName: nil, artworkUrl60: nil, trackViewUrl: nil))
 
         if #available(iOS 15.0, *) {
@@ -40,24 +40,27 @@ class AudioPlayerViewController: UIViewController {
         songTitleLabel.text = music.trackName
     }
     
-    func togglePlayAndPause() {
+    private func setupPlayButton() {
+        playPauseButton.setTitle("Play", for: .normal)
+        playPauseButton.setImage(UIImage(systemName: "play"), for: .normal)
+    }
+    
+    private func setupPauseButton() {
+        playPauseButton.setTitle("Pause", for: .normal)
+        playPauseButton.setImage(UIImage(systemName: "pause"), for: .normal)
+    }
+    
+    private func togglePlayAndPause() {
         if isPaused == true {
             avPlayer?.pause()
-            playPauseButton.setTitle("Play", for: .normal)
+            setupPlayButton()
         } else {
             avPlayer?.play()
-            playPauseButton.setTitle("Pause", for: .normal)
+            setupPauseButton()
         }
     }
     
     @IBAction func pauseButton(_ sender: Any) {
-        if #available(iOS 15.0, *) {
-            if let presentationController = presentationController as? UISheetPresentationController {
-                presentationController.selectedDetentIdentifier = .medium
-            }
-        } else {
-            // Fallback on earlier versions
-        }
         isPaused = !isPaused
         togglePlayAndPause()
     }

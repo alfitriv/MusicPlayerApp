@@ -44,7 +44,7 @@ class NetworkLayer: MusicService {
                             successHandler(musicList)
                         }
                     } catch {
-                        
+                        fatalError()
                     }
                     
                 }.resume()

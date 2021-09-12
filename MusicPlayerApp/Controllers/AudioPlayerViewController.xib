@@ -62,7 +62,10 @@
                                     </subviews>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kud-ga-caO">
-                                    <rect key="frame" x="80" y="129" width="67" height="31"/>
+                                    <rect key="frame" x="13.5" y="129" width="200" height="31"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="ie6-0r-RbY"/>
+                                    </constraints>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                     <connections>

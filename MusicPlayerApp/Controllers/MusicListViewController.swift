@@ -68,7 +68,7 @@ extension MusicListViewController: UITableViewDelegate, UITableViewDataSource {
             avPlayer?.playImmediately(atRate: 1.0)
             audioPlayerVC.avPlayer = avPlayer
             } catch {
-                
+                fatalError()
             }
         self.present(audioPlayerVC, animated: true, completion: nil)
     }
