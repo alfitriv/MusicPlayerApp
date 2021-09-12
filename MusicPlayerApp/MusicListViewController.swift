@@ -1,57 +1,34 @@
 //
-//  ViewController.swift
-//  MusicPlayerApp
+//  MusicListViewController.swift
+//  MusicListViewController
 //
-//  Created by Mila on 08/09/21.
+//  Created by Mila on 12/09/21.
 //
 
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
-    var networkLayer = NetworkLayer.shared
-    var musicList: [Music] = []
-    var filteredMusic: [Music] = []
-    var audioPlayer: AVAudioPlayer?
-    var avPlayer: AVPlayer?
-    let searchController = UISearchController(searchResultsController: nil)
-    var isSearchBarEmpty: Bool {
-      return searchController.searchBar.text?.isEmpty ?? true
-    }
-    
+class MusicListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    var musicList: [Music] = []
+    var avPlayer: AVPlayer?
+    var networkLayer = NetworkLayer.shared
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        networkLayer.fetchMusicResults(successHandler: { [weak self] (music) in
-//            self?.musicList = music.results
-//            self?.tableView.reloadData()
-//        }) { (error) in
-//            print(error)
-//        }
-        
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Music"
         navigationItem.searchController = searchController
         definesPresentationContext = true
-//        tableView.register(UINib(nibName: "MusicTableViewCell", bundle: nil), forCellReuseIdentifier: "musicCell")
-        
+
         tableView.register(UINib(nibName: "MusicTableViewCell", bundle: nil), forCellReuseIdentifier: "musicCell")
     }
-    
-//    func filterContentForSearchText(_ searchText: String,
-//                                    category: Candy.Category? = nil) {
-//      filteredCandies = candies.filter { (candy: Candy) -> Bool in
-//        return candy.name.lowercased().contains(searchText.lowercased())
-//      }
-//
-//      tableView.reloadData()
-//    }
-    
+
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension MusicListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return musicList.count
     }
@@ -85,7 +62,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension ViewController: UISearchResultsUpdating {
+extension MusicListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text?.count ?? 0 > 3 {
             networkLayer.fetchMusicResults(searchText: searchController.searchBar.text ?? "", successHandler: { [weak self] (music) in
