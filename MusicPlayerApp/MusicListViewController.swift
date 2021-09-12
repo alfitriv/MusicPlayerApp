@@ -12,8 +12,17 @@ class MusicListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var musicList: [Music] = []
     var avPlayer: AVPlayer?
-    var networkLayer = NetworkLayer.shared
+    private let musicService: MusicService
     let searchController = UISearchController(searchResultsController: nil)
+    
+    init(musicService: MusicService) {
+        self.musicService = musicService
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +74,7 @@ extension MusicListViewController: UITableViewDelegate, UITableViewDataSource {
 extension MusicListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text?.count ?? 0 > 3 {
-            networkLayer.fetchMusicResults(searchText: searchController.searchBar.text ?? "", successHandler: { [weak self] (music) in
+            musicService.fetchMusicResults(searchText: searchController.searchBar.text ?? "", successHandler: { [weak self] (music) in
                 self?.musicList = music.results
                 self?.tableView.reloadData()
             }) { (error) in

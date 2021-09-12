@@ -7,7 +7,11 @@
 
 import Foundation
 
-class NetworkLayer {
+protocol MusicService {
+    func fetchMusicResults(searchText: String, successHandler: @escaping (Result) -> Void, errorHandler: @escaping (Error) -> Void)
+}
+
+class NetworkLayer: MusicService {
     static var shared = NetworkLayer()
     private init(){}
     

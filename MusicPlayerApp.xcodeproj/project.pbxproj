@@ -25,6 +25,8 @@
 		217BB51E26EA36810045CB50 /* AudioPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217BB51C26EA36800045CB50 /* AudioPlayerViewController.xib */; };
 		217BB56526EE37A80045CB50 /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB56326EE37A80045CB50 /* MusicListViewController.swift */; };
 		217BB56626EE37A80045CB50 /* MusicListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217BB56426EE37A80045CB50 /* MusicListViewController.xib */; };
+		217BB56826EE40CE0045CB50 /* MusicListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB56726EE40CE0045CB50 /* MusicListViewControllerTests.swift */; };
+		217BB56A26EE41850045CB50 /* MockMusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB56926EE41850045CB50 /* MockMusicService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		217BB51C26EA36800045CB50 /* AudioPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioPlayerViewController.xib; sourceTree = "<group>"; };
 		217BB56326EE37A80045CB50 /* MusicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
 		217BB56426EE37A80045CB50 /* MusicListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicListViewController.xib; sourceTree = "<group>"; };
+		217BB56726EE40CE0045CB50 /* MusicListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListViewControllerTests.swift; sourceTree = "<group>"; };
+		217BB56926EE41850045CB50 /* MockMusicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMusicService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				217BB4F426E8EFEE0045CB50 /* MusicPlayerAppTests.swift */,
+				217BB56726EE40CE0045CB50 /* MusicListViewControllerTests.swift */,
+				217BB56926EE41850045CB50 /* MockMusicService.swift */,
 			);
 			path = MusicPlayerAppTests;
 			sourceTree = "<group>";
@@ -308,6 +314,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217BB56A26EE41850045CB50 /* MockMusicService.swift in Sources */,
+				217BB56826EE40CE0045CB50 /* MusicListViewControllerTests.swift in Sources */,
 				217BB4F526E8EFEE0045CB50 /* MusicPlayerAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
