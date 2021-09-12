@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		217BB4DE26E8EFE60045CB50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB4DD26E8EFE60045CB50 /* AppDelegate.swift */; };
 		217BB4E026E8EFE60045CB50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB4DF26E8EFE60045CB50 /* SceneDelegate.swift */; };
-		217BB4E226E8EFE60045CB50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB4E126E8EFE60045CB50 /* ViewController.swift */; };
 		217BB4E726E8EFEE0045CB50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 217BB4E626E8EFEE0045CB50 /* Assets.xcassets */; };
 		217BB4EA26E8EFEE0045CB50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 217BB4E826E8EFEE0045CB50 /* LaunchScreen.storyboard */; };
 		217BB4F526E8EFEE0045CB50 /* MusicPlayerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217BB4F426E8EFEE0045CB50 /* MusicPlayerAppTests.swift */; };
@@ -50,7 +49,6 @@
 		217BB4DA26E8EFE60045CB50 /* MusicPlayerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		217BB4DD26E8EFE60045CB50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		217BB4DF26E8EFE60045CB50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		217BB4E126E8EFE60045CB50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		217BB4E626E8EFEE0045CB50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		217BB4E926E8EFEE0045CB50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		217BB4EB26E8EFEE0045CB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,21 +119,15 @@
 		217BB4DC26E8EFE60045CB50 /* MusicPlayerApp */ = {
 			isa = PBXGroup;
 			children = (
+				217BB56D26EE45660045CB50 /* Controllers */,
+				217BB56C26EE45340045CB50 /* Views */,
+				217BB56B26EE45030045CB50 /* Model */,
+				217BB50F26E8F9150045CB50 /* NetworkLayer.swift */,
 				217BB4DD26E8EFE60045CB50 /* AppDelegate.swift */,
 				217BB4DF26E8EFE60045CB50 /* SceneDelegate.swift */,
-				217BB4E126E8EFE60045CB50 /* ViewController.swift */,
 				217BB4E626E8EFEE0045CB50 /* Assets.xcassets */,
 				217BB4E826E8EFEE0045CB50 /* LaunchScreen.storyboard */,
 				217BB4EB26E8EFEE0045CB50 /* Info.plist */,
-				217BB50D26E8F2090045CB50 /* Music.swift */,
-				217BB50F26E8F9150045CB50 /* NetworkLayer.swift */,
-				217BB51126E903AB0045CB50 /* Result.swift */,
-				217BB51326EA102A0045CB50 /* MusicTableViewCell.swift */,
-				217BB51426EA102A0045CB50 /* MusicTableViewCell.xib */,
-				217BB51B26EA36800045CB50 /* AudioPlayerViewController.swift */,
-				217BB51C26EA36800045CB50 /* AudioPlayerViewController.xib */,
-				217BB56326EE37A80045CB50 /* MusicListViewController.swift */,
-				217BB56426EE37A80045CB50 /* MusicListViewController.xib */,
 			);
 			path = MusicPlayerApp;
 			sourceTree = "<group>";
@@ -157,6 +149,35 @@
 				217BB50026E8EFEE0045CB50 /* MusicPlayerAppUITestsLaunchTests.swift */,
 			);
 			path = MusicPlayerAppUITests;
+			sourceTree = "<group>";
+		};
+		217BB56B26EE45030045CB50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				217BB51126E903AB0045CB50 /* Result.swift */,
+				217BB50D26E8F2090045CB50 /* Music.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		217BB56C26EE45340045CB50 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				217BB51326EA102A0045CB50 /* MusicTableViewCell.swift */,
+				217BB51426EA102A0045CB50 /* MusicTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		217BB56D26EE45660045CB50 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				217BB51B26EA36800045CB50 /* AudioPlayerViewController.swift */,
+				217BB51C26EA36800045CB50 /* AudioPlayerViewController.xib */,
+				217BB56326EE37A80045CB50 /* MusicListViewController.swift */,
+				217BB56426EE37A80045CB50 /* MusicListViewController.xib */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +321,6 @@
 			files = (
 				217BB51D26EA36800045CB50 /* AudioPlayerViewController.swift in Sources */,
 				217BB51226E903AB0045CB50 /* Result.swift in Sources */,
-				217BB4E226E8EFE60045CB50 /* ViewController.swift in Sources */,
 				217BB4DE26E8EFE60045CB50 /* AppDelegate.swift in Sources */,
 				217BB50E26E8F2090045CB50 /* Music.swift in Sources */,
 				217BB51526EA102A0045CB50 /* MusicTableViewCell.swift in Sources */,
