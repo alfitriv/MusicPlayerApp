@@ -80,7 +80,8 @@ extension MusicListViewController: UISearchResultsUpdating {
             loadingIndicator.isHidden = false
             emptyView.isHidden = true
             loadingIndicator.startAnimating()
-            musicService.fetchMusicResults(searchText: searchController.searchBar.text ?? "", successHandler: { [weak self] (music) in
+            let searchKeywordStr = replaceSpace(searchController.searchBar.text!)
+            musicService.fetchMusicResults(searchText: searchKeywordStr, successHandler: { [weak self] (music) in
                 self?.loadingIndicator.isHidden = true
                 self?.loadingIndicator.stopAnimating()
                 self?.musicList = music.results
@@ -90,4 +91,11 @@ extension MusicListViewController: UISearchResultsUpdating {
             }
         }
     }
+
+    // NOTE: Replace all space occurences in the search term with %20 when the term will be parsed as an API URL
+    private func replaceSpace(_ inputStr: String) -> String {
+        let outputStr = inputStr.replacingOccurrences(of: " ", with: "%20")
+        return outputStr
+    }
+
 }
