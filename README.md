@@ -22,10 +22,10 @@ An app that fetches music from the iTunes API. Functionalities include searching
 </tr>
 <tr>
 <td>
-<img src="./assets/MusicAppPlayer_PreFix.gif">
+<img src="./assets/MusicAppPlayer_PreFix.gif" height="500">
 </td>
 <td>
-<img src="./assets/MusicAppPlayer_PostFix.gif">
+<img src="./assets/MusicAppPlayer_PostFix.gif" height="500">
 </td>
 </tr>
 </table>
